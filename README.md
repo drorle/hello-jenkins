@@ -32,6 +32,12 @@
   - Open an ssh-enabled terminal and use a command similar to the following to connect to your macihne:
     ssh -i 'C:\data\Private\SSH\.ssh\DVL2.pem' ubuntu@54.218.71.107
     Confirm with "yes".
-  - 
+- Install Git. Type:
+  sudo apt install -y git
+- Clone the repository from GitHub to the machine:
+  - mkdir ~/git
+  - cd ~/git
+  - git clone git@github.com:drorle/hello-jenkins.git
+   
   
   
