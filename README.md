@@ -30,7 +30,7 @@
   - Go to the EC2 Management Console at https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#LaunchInstanceWizard:
   - Identify the new machine and copy its IP address.
   - Open an ssh-enabled terminal and use a command similar to the following to connect to your macihne:
-    ssh -i 'C:\data\Private\SSH\.ssh\DVL2.pem' ec2-user@54.218.71.107
+    ssh -i 'C:\data\Private\SSH\.ssh\DVL2.pem' ubuntu@54.218.71.107
     Confirm with "yes".
   - 
   
