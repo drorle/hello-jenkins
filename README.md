@@ -13,10 +13,11 @@
   - Uncheck "Delete on Termination".
   - Click "Review and launch".
   - Click "Edit Security Groups".
+  - Click "Custom" for the existing rule (SSH) and choose "Anywhere".
   - Click "Add Rule".
   - In "Port Range", write "8080" and in "Source", choose "Anywhere". In "Description" write "Jenkins".
   - Click "Add Rule".
-  - In "Type" choose "HTTP". In "Description" write "HTTP".
+  - In "Type" choose "HTTP". In "Source" choose "Anywhere". In "Description" write "HTTP".
   - Click "Review and Launch".
   - Click "Launch".
   - Click "Choose an existing key pair" if you already have one, or "Create a new key pair" if you haven't.
@@ -24,7 +25,13 @@
   - Click "Launch Instances".
   - Click on "View Instances".
   - Wait until the instance is up and running.
-  
-  
+  - Click on the pencil icon in your instance's cell uner the "Name" column and set a name for the instance: "TikalDemo".
+- Connect to the new machine:
+  - Go to the EC2 Management Console at https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#LaunchInstanceWizard:
+  - Identify the new machine and copy its IP address.
+  - Open an ssh-enabled terminal and use a command similar to the following to connect to your macihne:
+    ssh -i 'C:\data\Private\SSH\.ssh\DVL2.pem' ec2-user@54.218.71.107
+    Confirm with "yes".
+  - 
   
   
