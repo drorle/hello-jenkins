@@ -37,7 +37,38 @@
 - Clone the repository from GitHub to the machine:
   - mkdir ~/git
   - cd ~/git
-  - git clone git@github.com:drorle/hello-jenkins.git
+  - git clone https://github.com/drorle/hello-jenkins
+- Add content to the project:
+  - cd hello-jenkins/
+  - vi package.json
+  - Add following content into it:
+{
+  "name": "hello-jenkins",
+  "description": "hello jenkins test app",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.12.0"
+  },
+  "devDependencies": {
+    "mocha": "1.20.1",
+    "supertest": "0.13.0"
+  }
+}
+- vi app.js
+- Add the following content into it:
+var express = require('express');
+ 
+var app = express();
+ 
+app.get('/', function (req, res) {
+  res.send('hello world');
+});
+ 
+app.listen(process.env.PORT || 5000);
+ 
+module.exports = app;
+- 
    
   
   
