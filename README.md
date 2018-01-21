@@ -34,6 +34,21 @@
     Confirm with "yes".
 - Install Git. Type:
   sudo apt install -y git
+- Install node and npm. Type:
+  sudo apt update
+  sudo apt upgrade -y
+  sudo apt install -y build-essential
+  sudo apt install -y libssl-dev
+  cd ~/git
+  git clone https://github.com/nodejs/node.git
+  cd ~/git/node
+  git checkout v9.4.0
+  ./configure
+  make
+  sudo make install
+  node --version
+  npm --version
+
 - Clone the repository from GitHub to the machine:
   - mkdir ~/git
   - cd ~/git
