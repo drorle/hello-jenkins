@@ -87,6 +87,37 @@
   sudo apt-get update
   sudo apt-get install -y jenkins
 
+- Configure Jenkins
+  - Get the default admin password from the file:
+    /var/lib/jenkins/secrets/initialAdminPassword
+  - Open a browser with the server ip address and port 8080
+    e.g.: http://54.218.28.206:8080
+  - Use the admin password to enter
+  - Click on "Select plugins to install"
+  - Search for and install "GitHub plugin"
+  - Add relevant details in the "Create First Admin User" page and click "Save and Finish".
+  - Click on "Start using Jenkins"
+  - Click the New Item button. Use "hello-jenkins" for the item name, select Build a free-style software project, and click the button labeled OK.
+  - Add the project's GitHub URL to the GitHub project box:
+    https://github.com/drorle/hello-jenkins
+  - Select the Git option under Source Code Management. In the newly appeared fields, add the URL to our GitHub project repo to the Repository URL field:
+   https://github.com/drorle/hello-jenkins.git
+  - Check the box next to "GitHub hook trigger".
+  - Click the box to enable Build when a change is pushed to GitHub:
+    Check box next to "Poll SCM".
+    Fill "* * * * *" in the schedule (poll scm every minute).
+  - Click the Add build step drop-down, and select Execute shell. In the command window type:
+    npm install
+    ./script/test
+  - Click "Save".
+
+- Configure GitHub integration with Jenkins
+  - Head over to the GitHub repo, and click Settings. 
+  - Click the Integrations & Services tab, and then on the Add service button.
+  - Select the Jenkins (GitHub plugin) service.
+  - Put the following address inside (you might need to change the IP address):
+    http://54.218.28.206:8080/github-webhook/
+  - Click Add service. 
 
 
 
