@@ -143,4 +143,8 @@
   - Test this by setting into the jenkins user again and try to ssh into the ubuntu user:
     sudo su jenkins
     ssh ubuntu@54.218.28.206
+  - Go to the project configuration in Jenkins, and scroll down to the build command. Add this new line at the end of it:
+    ./script/deploy
+  - Click the "Save" button.
 
+ - That's it - You're done with setting up a CI/CD process. Test this by comitting and pushing a new change to this project in GitHub.
