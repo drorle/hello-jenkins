@@ -88,6 +88,29 @@ module.exports = app;
   
 - Install dependencies:
   npm install 
-- Run the app:
+- Test by running the app:
   node app.js
+- Add a test:
+  - Create a folder called test, and in it create a file named test.js. Add the following code to test/test.js:
+
+var request = require('supertest');
+var app = require('../app.js');
+ 
+describe('GET /', function() {
+  it('respond with hello world', function(done) {
+    request(app).get('/').expect('hello world', done);
+  });
+});
+
+  - To run the test, run:
+    ./node_modules/.bin/mocha ./test/test.js
+  - Make a new directory called script, and in it create a file named test:
+
+#!/bin/sh
+ 
+./node_modules/.bin/mocha ./test/test.js
+
+
+  - Make it executable:
+    chmod +x script/test
 
