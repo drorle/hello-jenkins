@@ -120,4 +120,27 @@
   - Click Add service. 
 
 
+- Test this new configuration by modifying some file in the GitHub project, commit and push it.
+
+
+- Setup Deployment
+  - Become user jenkins on the machine:
+    sudo su jenkins
+  - Generate an SSH key:
+    ssh-keygen -t rsa
+    Set the file to the default location and do not use a passphrase.
+  - Copy the public key that was created. Run this:
+    cat ~/.ssh/id_rsa.pub
+    and copy the output.
+  - Go back to the ubuntu user by running:
+    exit
+  - Create an authorized_keys file and paste the key the you copied:
+    mkdir ~/.ssh
+    vi ~/.ssh/authorized_keys
+  - Set permissions on the ssh resources:
+    chmod 700 ~/.ssh
+    chmod 600 ~/.ssh/*
+  - Test this by setting into the jenkins user again and try to ssh into the ubuntu user:
+    sudo su jenkins
+    ssh ubuntu@54.218.28.206
 
