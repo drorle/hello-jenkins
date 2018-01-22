@@ -114,3 +114,8 @@ describe('GET /', function() {
   - Make it executable:
     chmod +x script/test
 
+- Add all new files to git:
+  git add .
+  git commit -m "Added node app"
+  git push origin master
+
