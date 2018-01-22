@@ -87,7 +87,7 @@ module.exports = app;
    
   
 - Install dependencies:
-  npm install 
+  npm install --production
 - Test by running the app:
   node app.js
 - Add a test:
