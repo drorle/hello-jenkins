@@ -57,7 +57,36 @@
 - Install dependencies:
   npm install --production
 - Test by running the app:
-  node app.js
+  sudo node app.js
 - To run the test, run:
   ./script/test
+
+- Install forever to allow the app to run in the background:
+  sudo npm install -g forever
+
+- Allow node to run on port 80 without sudo:
+  sudo setcap cap_net_bind_service=+ep /usr/local/bin/nodeo
+
+- Run the app in the background:
+  forever start app.js
+- To stop the app, run:
+  forever stopall
+
+- Install Java 1.8:
+  - Install java:
+    sudo add-apt-repository ppa:openjdk-r/ppa
+    sudo apt-get update
+    sudo apt-get -y install openjdk-8-jdk
+
+  - Choose java 8 as the default java:
+    sudo update-alternatives --config java
+
+- Install Jenkins:
+  sudo wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+  sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
+  sudo apt-get update
+  sudo apt-get install -y jenkins
+
+
+
 
